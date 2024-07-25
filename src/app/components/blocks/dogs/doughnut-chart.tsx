@@ -13,11 +13,11 @@ export const DoughnutChart: FC = () => {
   const [currentImg, setCurrentImg] = React.useState<
     StaticImageData | StaticImport | undefined | string
   >(undefined);
-  const [currentName, setCurrentName] = React.useState<
-    StaticImageData | StaticImport | undefined | string
-  >(undefined);
+  const [currentName, setCurrentName] = React.useState<undefined | string>(
+    undefined
+  );
   const [currentBgColor, setCurrentBgColor] = React.useState<
-    StaticImageData | StaticImport | undefined | string
+    undefined | string
   >(undefined);
 
   const hoverHandler = (el: React.MouseEvent<SVGPathElement, MouseEvent>) => {
@@ -55,7 +55,7 @@ export const DoughnutChart: FC = () => {
         id='Layer_1'
         viewBox='0 0 310.679 310.679'
         xmlSpace='preserve'
-        className={cn(styles.svgContainer)}
+        className={cn(styles.root)}
       >
         <g>
           <path
@@ -108,7 +108,9 @@ export const DoughnutChart: FC = () => {
         style={{ backgroundColor: `${currentBgColor}` }}
         className={cn(styles.doughnutImage)}
       >
-        <Image width={200} height={200} alt={currentName} src={currentImg} />
+        {currentName && currentImg && (
+          <Image width={200} height={200} alt={currentName} src={currentImg} />
+        )}
       </div>
     </div>
   );
