@@ -1,0 +1,30 @@
+.root {
+    padding: 160px 280px 40px;
+    position: relative;
+    background-color: #FDFAE4;
+}
+
+.descriptionWrapper {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: normal;
+    margin-right: 180px;
+    letter-spacing: 0.3px;
+    color: #6dc7cb;
+}
+
+.description {
+    color: #2d5568;
+    font-family: Menlo;
+    width: 400px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+    margin-bottom: 50px;
+}

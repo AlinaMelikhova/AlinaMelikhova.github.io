@@ -1,0 +1,50 @@
+.titleWrapper {
+    display: flex;
+    padding: 200px 280px 10px;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: normal;
+    margin-right: 180px;
+    letter-spacing: 0.3px;
+    color: #ff7c48;
+}
+
+.description {
+    color: #693019;
+    font-family: Menlo;
+    width: 400px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+    margin-bottom: 50px;
+}
+
+.LineChartDescription {
+    position: relative;
+}
+
+.LineChartDescription::before {
+    content: '';
+    width: 10px;
+    height: 486px;
+    background-color: #FDFAE4;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+}
+
+.LineChartDescription::after {
+    content: '';
+    width: 30px;
+    height: 381px;
+    background-color: #FDFAE4;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+}

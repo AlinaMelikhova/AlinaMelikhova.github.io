@@ -1,0 +1,33 @@
+.root {
+    position: relative;
+    width: 400px;
+    height: 400px;
+}
+
+.svgContainer {
+    cursor: pointer;
+}
+
+.doughnutImage {
+    position: absolute;
+    border-radius: 50%;
+    background-color: transparent;
+    top: 102px;
+    left: 102px;
+    width: 196px;
+    height: 196px;
+    overflow: hidden;
+}
+
+.doughnutName {
+    position: absolute;
+    font-size: 22px;
+    color: #0D2A43;
+    font-weight: 800;
+    top: 11%;
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}

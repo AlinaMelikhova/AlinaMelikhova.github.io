@@ -1,0 +1,43 @@
+.root {
+    padding: 80px 280px 180px;
+    position: relative;
+    background-color: #FDFAE4;
+}
+
+.title {
+    font-size: 50px;
+    font-weight: 800;
+    line-height: normal;
+    margin-bottom: 40px;
+    letter-spacing: 0.3px;
+    margin-bottom: 40px;
+    color: #ff7c48;
+}
+
+.description {
+    color: #693019;
+    font-family: Menlo;
+    width: 265px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.9;
+    letter-spacing: 0.2px;
+    margin-bottom: 50px;
+}
+
+.DoughnutChartDescription {
+    display: flex;
+    justify-content: space-between;
+}
+
+.popUp {
+    position: absolute;
+    width: max-content;
+    background-color: #f8a43c;
+    color: #fff;
+    right: 100px;
+    bottom: 300px;
+    font-size: 12px;
+    padding: 10px;
+
+}

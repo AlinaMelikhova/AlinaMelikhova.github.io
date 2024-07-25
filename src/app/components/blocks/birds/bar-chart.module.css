@@ -1,0 +1,149 @@
+.root {
+    padding-top: 35px;
+    position: relative;
+}
+
+.root::before {
+    content: '\2190\a0\a0\a0\a0\a0\a0\Not Cool %';
+    font-family: Inter;
+    font-size: 18px;
+    color: #792726;
+    top: 0px;
+    left: 37%;
+    position: absolute;
+    z-index: 1;
+}
+
+.root::after {
+    content: 'Cool %\a0\a0\a0\a0\a0\2192';
+    font-family: Inter;
+    font-size: 18px;
+    color: #2d5568;
+    top: 0px;
+    left: 60%;
+    position: absolute;
+    z-index: 1;
+}
+
+
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: calc(56% + 1px);
+    width: 1px;
+    height: 100%;
+    background-color: black;
+    z-index: 10;
+}
+
+.listItem {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-top: 1px solid #ded9d9;
+    margin: 0;
+    min-height: 40px;
+    cursor: default;
+}
+
+.listItem:last-child {
+    border-bottom: 1px solid #ded9d9;
+}
+
+.listItemDescription {
+    padding: 0;
+    margin: 0;
+    padding-left: 20px;
+    width: 14%;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    font-family: Inter;
+    color: #2d5568;
+}
+
+.rowContainer {
+    display: flex;
+    width: 100%;
+    /* height: 50px; */
+    list-style-type: none;
+    position: relative;
+}
+
+.negativeContainer {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.positiveContainer {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.dataBar {
+    height: 27px;
+    cursor: pointer;
+}
+
+.negativeBar {
+    background-color: #fd9795;
+}
+
+.negativeBarValue {
+    font-size: 12px;
+    color: #792726;
+    padding-right: 15px;
+}
+
+.positiveBarValue {
+    font-size: 12px;
+    color: #2d5568;
+    padding-left: 15px;
+
+}
+
+.positiveBar {
+    /* background-color: #6dc7cb; */
+    background-color: #aaf0f9;
+
+}
+
+.barDescription {
+    position: absolute;
+    padding: 10px;
+    bottom: 40px;
+    left: 0;
+    max-width: 250px;
+    height: max-content;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    box-shadow: 1px 2px 4px 1px grey;
+    display: none;
+    pointer-events: none;
+    font-family: Inter;
+    letter-spacing: 0.4px;
+    text-align: center;
+    z-index: 10;
+}
+
+
+.barDescriptionNegative {
+    left: auto;
+    right: 0;
+}
