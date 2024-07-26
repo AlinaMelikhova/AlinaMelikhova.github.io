@@ -2,6 +2,11 @@
     position: relative;
     width: 400px;
     height: 400px;
+
+    @media (max-width: 1200px) {
+        width: 100%;
+        height: auto;
+    }
 }
 
 .svgContainer {
@@ -12,10 +17,10 @@
     position: absolute;
     border-radius: 50%;
     background-color: transparent;
-    top: 102px;
-    left: 102px;
-    width: 196px;
-    height: 196px;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    aspect-ratio: 1/1;
     overflow: hidden;
 }
 

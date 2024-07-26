@@ -1,7 +1,11 @@
 .root {
-    padding: 80px 280px 180px;
+    padding: 80px 19% 180px;
     position: relative;
     background-color: #FDFAE4;
+
+    @media (max-width: 1200px) {
+        padding: 50px 10% 150px;
+    }
 }
 
 .title {
@@ -12,6 +16,11 @@
     letter-spacing: 0.3px;
     margin-bottom: 40px;
     color: #ff7c48;
+
+    @media (max-width: 1200px) {
+        font-size: 2.5rem;
+        margin: 40px 0 30px;
+    }
 }
 
 .description {
@@ -23,11 +32,20 @@
     line-height: 1.9;
     letter-spacing: 0.2px;
     margin-bottom: 50px;
+
+    @media (max-width: 1200px) {
+        font-size: 14px;
+        margin: 0 0 50px;
+    }
 }
 
 .DoughnutChartDescription {
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1200px) {
+        flex-direction: column-reverse;
+    }
 }
 
 .popUp {
@@ -39,5 +57,12 @@
     bottom: 300px;
     font-size: 12px;
     padding: 10px;
+    line-height: 150%;
+
+    @media (max-width: 1200px) {
+        font-size: 10px;
+        bottom: 40px;
+        right: 20px;
+    }
 
 }

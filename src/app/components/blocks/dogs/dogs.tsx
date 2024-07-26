@@ -6,7 +6,7 @@ import { DoughnutChart } from './doughnut-chart';
 export const Dogs: FC = () => {
   return (
     <section className={cn(styles.root)}>
-        <h2 className={cn(styles.title)}>Dogs</h2>
+      <h2 className={cn(styles.title)}>Dogs</h2>
       <div className={cn(styles.DoughnutChartDescription)}>
         <DoughnutChart />
         <p className={cn(styles.description)}>
@@ -15,7 +15,9 @@ export const Dogs: FC = () => {
           Top-6!
         </p>
       </div>
-      <p className={cn(styles.popUp)}>*Just kidding! I love all dogs</p>
+      <p className={cn(styles.popUp)}>
+        *Just kidding! I love all dogs <br /> **And birds{' '}
+      </p>
     </section>
   );
 };
