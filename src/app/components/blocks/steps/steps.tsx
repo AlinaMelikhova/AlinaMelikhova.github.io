@@ -10,7 +10,7 @@ export const Steps: FC = () => {
         <h2 className={cn(styles.title)}>Steps</h2>
         <p className={cn(styles.description)}>
           Steps, really? Okay, I know it's boring, but I really enjoy walking,
-          so this is the only big data I have.
+          so this is the only big enough data I have.
         </p>
       </div>
       <div className={cn(styles.LineChartDescription)}>

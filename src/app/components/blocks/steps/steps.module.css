@@ -1,6 +1,11 @@
 .titleWrapper {
     display: flex;
-    padding: 200px 280px 10px;
+    padding: 200px 19% 10px;
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+        padding: 40px 10%;
+    }
 }
 
 .title {
@@ -10,17 +15,29 @@
     margin-right: 180px;
     letter-spacing: 0.3px;
     color: #ff7c48;
+
+    @media (max-width: 1200px) {
+        font-size: 2.5rem;
+        margin: 0 0 30px;
+        font-size: 30px;
+    }
 }
 
 .description {
     color: #693019;
     font-family: Menlo;
-    width: 400px;
+    width: 50%;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.9;
     letter-spacing: 0.2px;
     margin-bottom: 50px;
+
+    @media (max-width: 1200px) {
+        font-size: 14px;
+        margin-bottom: 30px;
+        width: 100%;
+    }
 }
 
 .LineChartDescription {
@@ -30,7 +47,7 @@
 .LineChartDescription::before {
     content: '';
     width: 10px;
-    height: 486px;
+    height: 68%;
     background-color: #FDFAE4;
     position: absolute;
     z-index: 1;
@@ -41,10 +58,32 @@
 .LineChartDescription::after {
     content: '';
     width: 30px;
-    height: 381px;
+    height: 53%;
     background-color: #FDFAE4;
     position: absolute;
     z-index: 1;
     bottom: 0;
     right: 0;
+}
+
+@media (max-width: 1200px) {
+    .LineChartDescription::before {
+        height: 72%;
+    }
+
+    .LineChartDescription::after {
+        height: 58%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .LineChartDescription::before {
+        height: 79%;
+    }
+
+    .LineChartDescription::after {
+        height: 73%;
+    }
+
 }

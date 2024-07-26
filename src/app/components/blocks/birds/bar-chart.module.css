@@ -12,6 +12,11 @@
     left: 37%;
     position: absolute;
     z-index: 1;
+
+    @media (max-width: 1200px) {
+        font-size: 16px;
+        left: 26%;
+    }
 }
 
 .root::after {
@@ -23,8 +28,24 @@
     left: 60%;
     position: absolute;
     z-index: 1;
+
+    @media (max-width: 1200px) {
+        font-size: 16px;
+        left: 63%;
+    }
 }
 
+@media (max-width: 1200px) {
+    .root::before {
+        font-size: 16px;
+        left: 26%;
+    }
+
+    .root::after {
+        font-size: 16px;
+        left: 63%;
+    }
+}
 
 
 .list {
@@ -39,7 +60,7 @@
     content: '';
     position: absolute;
     top: 0;
-    left: calc(56% + 1px);
+    left: calc(57% + 1px);
     width: 1px;
     height: 100%;
     background-color: black;
@@ -70,6 +91,7 @@
     letter-spacing: 0.6px;
     font-family: Inter;
     color: #2d5568;
+    box-sizing: content-box;
 }
 
 .rowContainer {
