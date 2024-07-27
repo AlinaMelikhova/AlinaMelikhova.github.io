@@ -1,6 +1,5 @@
 'use client';
 
-import cn from 'classnames';
 import { FC, useEffect, useRef } from 'react';
 import styles from './map.module.css';
 import { LEGEND } from './config';
@@ -26,15 +25,15 @@ export const Map: FC = () => {
   }, []);
 
   return (
-    <section className={cn(styles.root)}>
-      <div className={cn(styles.titleWrapper)}>
-        <h2 className={cn(styles.title)}>Travelling</h2>
-        <p className={cn(styles.description)}>
+    <section className={styles.root}>
+      <div className={styles.titleWrapper}>
+        <h2 className={styles.title}>Travelling</h2>
+        <p className={styles.description}>
           I've visited 58 countries and tried to stay as long as possible. I've
           mapped them out, showing how many weeks I spent in each one.
         </p>
       </div>
-      <div className={cn(styles.LineChartDescription)}>
+      <div className={styles.LineChartDescription}>
         <div ref={mapElRef} className={styles.mapWrapper} />
 
         <div className={styles.tooltip} id='map-tooltip'>
@@ -45,14 +44,14 @@ export const Map: FC = () => {
           ></div>
         </div>
 
-        <ul className={cn(styles.legendList)}>
+        <ul className={styles.legendList}>
           {LEGEND.filter((item) => !item.hidden).map((item) => (
-            <li key={item.min} className={cn(styles.legendItem)}>
+            <li key={item.min} className={styles.legendItem}>
               <div
-                className={cn(styles.legendColor)}
+                className={styles.legendColor}
                 style={{ backgroundColor: item.style.fillColor }}
               ></div>
-              <span className={cn(styles.legendDescription)}>{item.title}</span>
+              <span className={styles.legendDescription}>{item.title}</span>
             </li>
           ))}
         </ul>

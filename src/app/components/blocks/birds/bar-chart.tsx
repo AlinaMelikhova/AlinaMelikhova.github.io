@@ -55,27 +55,27 @@ export const HorizontalBarChart: FC = () => {
   };
 
   return (
-    <div className={cn(styles.root)}>
-      <ul className={cn(styles.list)}>
+    <div className={styles.root}>
+      <ul className={styles.list}>
         {BIRDS.map(
           ({ name, negativeValue, positiveValue, positive, negative }) => {
             return (
               <li
                 key={name}
                 id={name}
-                className={cn(styles.listItem)}
+                className={styles.listItem}
                 onMouseEnter={rowHoverHandler}
                 onMouseLeave={rowLeaveHandler}
                 data-bird
               >
-                <p className={cn(styles.listItemDescription)}>{name}</p>
+                <p className={styles.listItemDescription}>{name}</p>
                 <div
                   className={cn(styles.rowContainer, {
                     [`${name}-styles.itemlist}`]: true,
                   })}
                 >
-                  <div className={cn(styles.negativeContainer)} data-container>
-                    <span className={cn(styles.negativeBarValue)}>
+                  <div className={styles.negativeContainer} data-container>
+                    <span className={styles.negativeBarValue}>
                       {negativeValue}
                     </span>
                     <div
@@ -94,17 +94,17 @@ export const HorizontalBarChart: FC = () => {
                       {negative}
                     </div>
                   </div>
-                  <div className={cn(styles.positiveContainer)} data-container>
+                  <div className={styles.positiveContainer} data-container>
                     <div
                       style={{ width: positiveValue }}
                       className={cn(styles.positiveBar, styles.dataBar)}
                       onMouseEnter={barHoverHandler}
                       onMouseLeave={barLeaveHandler}
                     ></div>
-                    <div className={cn(styles.barDescription)} data-description>
+                    <div className={styles.barDescription} data-description>
                       {positive}
                     </div>
-                    <span className={cn(styles.positiveBarValue)}>
+                    <span className={styles.positiveBarValue}>
                       {positiveValue}
                     </span>
                   </div>

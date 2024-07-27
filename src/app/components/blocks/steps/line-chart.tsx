@@ -57,7 +57,8 @@ export const LineChart: React.FC = () => {
         backgroundColor: '#FDFAE4',
         borderColor: '#FBED69',
         borderWidth: 1,
-        pointBorderWidth: 5,
+        pointBorderWidth: 8,
+        pointHoverRadius: 13,
       },
     ],
   };
@@ -85,6 +86,17 @@ export const LineChart: React.FC = () => {
         display: false,
       },
       tooltip: {
+        backgroundColor: 'rgba(255, 255, 255, 0.9)',
+        titleColor: 'black',
+        titleFont: { family: 'Inter', size: 14 },
+        titleSpacing: 1,
+        bodyColor: 'black',
+        bodyFont: { family: 'Inter', size: 14 },
+        bodySpacing: 1,
+        borderWidth: 0.5,
+        borderColor: 'rgba(128, 128, 128, 0.5)',
+        padding: 15,
+        displayColors: false,
         callbacks: {
           label: (context) => `${context.parsed.y} steps`,
         },

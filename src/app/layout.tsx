@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Ubuntu } from 'next/font/google';
 import './globals.css';
 import Head from 'next/head';
 
-const inter = Inter({ subsets: ['latin'] });
+const ubuntu = Ubuntu({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 export const metadata: Metadata = {
   title: 'Lowy Institute',
@@ -18,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <Head>
-        <title>damn!</title>
+        <title>Hey Lowy Institute!</title>
         <link
           rel='stylesheet'
           href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
@@ -28,7 +31,7 @@ export default function RootLayout({
         />
       </Head>
       {/* <Script src='path/to/chartjs/dist/chart.umd.js' /> */}
-      <body className={inter.className}>{children}</body>
+      <body className={ubuntu.className}>{children}</body>
     </html>
   );
 }
