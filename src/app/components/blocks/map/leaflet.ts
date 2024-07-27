@@ -22,6 +22,8 @@ export function initMap(element: HTMLElement) {
     attributionControl: false,
   });
 
+  console.dir(geo);
+
   const countries = L.geoJSON(geo as any, {
     style: (feature) => {
       const weeks = VISITED_COUNTRIES[getCountryCode(feature)] ?? 0;

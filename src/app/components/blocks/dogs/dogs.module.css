@@ -4,7 +4,7 @@
     background-color: #FDFAE4;
 
     @media (max-width: 1200px) {
-        padding: 50px 10% 150px;
+        padding: 20px 10% 150px;
     }
 }
 
@@ -14,7 +14,6 @@
     line-height: normal;
     margin-bottom: 40px;
     letter-spacing: 0.3px;
-    margin-bottom: 40px;
     color: #ff7c48;
 
     @media (max-width: 1200px) {
