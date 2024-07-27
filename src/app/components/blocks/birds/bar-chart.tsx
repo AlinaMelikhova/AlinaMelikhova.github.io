@@ -8,17 +8,19 @@ import { BIRDS } from './config';
 export const HorizontalBarChart: FC = () => {
   const rowHoverHandler = (el: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
     const currentEl = el.currentTarget;
-    currentEl.classList.add('isActiveBarchart');
+    currentEl.classList.add(styles.isActiveBarchart);
     Array.from(document.querySelectorAll('[data-bird]')).forEach((e) => {
-      if (e.id !== el.currentTarget.id) e.classList.add('inactiveBarchart');
+      if (e.id !== el.currentTarget.id)
+        e.classList.add(styles.inactiveBarchart);
     });
   };
 
   const rowLeaveHandler = (el: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
     const currentEl = el.currentTarget;
-    currentEl.classList.remove('isActiveBarchart');
+    currentEl.classList.remove(styles.isActiveBarchart);
     Array.from(document.querySelectorAll('[data-bird]')).forEach((e) => {
-      if (e.id !== el.currentTarget.id) e.classList.remove('inactiveBarchart');
+      if (e.id !== el.currentTarget.id)
+        e.classList.remove(styles.inactiveBarchart);
     });
   };
 
@@ -26,7 +28,7 @@ export const HorizontalBarChart: FC = () => {
     el: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
     const currentEl = el.currentTarget;
-    currentEl.classList.add('isActiveDatabar');
+    currentEl.classList.add(styles.isActiveDatabar);
 
     const container = currentEl.closest('[data-container]');
     const description = container?.querySelector(
@@ -42,7 +44,7 @@ export const HorizontalBarChart: FC = () => {
     el: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
     const currentEl = el.currentTarget;
-    currentEl.classList.remove('isActiveDatabar');
+    currentEl.classList.remove(styles.isActiveDatabar);
 
     const container = currentEl.closest('[data-container]');
     const description = container?.querySelector(
