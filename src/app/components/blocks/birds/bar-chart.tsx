@@ -34,7 +34,7 @@ export const HorizontalBarChart: FC = () => {
     ) as HTMLElement | null;
 
     if (description) {
-      description.style.display = 'block';
+      description.style.visibility = 'visible';
     }
   };
 
@@ -50,7 +50,7 @@ export const HorizontalBarChart: FC = () => {
     ) as HTMLElement | null;
 
     if (description) {
-      description.style.display = 'none';
+      description.style.visibility = '';
     }
   };
 
