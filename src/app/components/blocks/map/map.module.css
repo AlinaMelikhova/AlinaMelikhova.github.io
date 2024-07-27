@@ -41,7 +41,11 @@
     }
 }
 
-.mapWrapper {
+.map {
+    position: relative;
+}
+
+.mapRoot {
     width: 100%;
     height: 600px;
     aspect-ratio: 4 / 1;
@@ -110,7 +114,7 @@
     box-shadow: 1px 2px 4px 1px grey;
     pointer-events: none;
     visibility: hidden;
-    position: fixed;
+    position: absolute;
     z-index: 1000;
 
     @media (max-width: 1200px) {

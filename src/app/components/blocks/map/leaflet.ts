@@ -54,14 +54,14 @@ export function initMap(element: HTMLElement) {
     const height = tooltipEl.offsetHeight;
     const screenWidth = window.innerWidth;
     const { clientX, clientY } = originalEvent;
+    const { top } = element.getBoundingClientRect();
 
     if (screenWidth - clientX - TOOLTIP_OFFSET * 2 >= width) {
       tooltipEl.style.left = `${clientX + TOOLTIP_OFFSET}px`;
     } else {
       tooltipEl.style.left = `${clientX - TOOLTIP_OFFSET - width}px`;
     }
-
-    tooltipEl.style.top = `${clientY - height / 2}px`;
+    tooltipEl.style.top = `${clientY - top - height / 2}px`;
     tooltipEl.style.visibility = 'visible';
   });
 

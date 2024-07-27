@@ -33,8 +33,8 @@ export const Map: FC = () => {
           mapped them out, showing how many weeks I spent in each one.
         </p>
       </div>
-      <div className={styles.LineChartDescription}>
-        <div ref={mapElRef} className={styles.mapWrapper} />
+      <div className={styles.map}>
+        <div ref={mapElRef} className={styles.mapRoot} />
 
         <div className={styles.tooltip} id='map-tooltip'>
           <div className={styles.tooltipTitle} id='map-tooltip-country'></div>
