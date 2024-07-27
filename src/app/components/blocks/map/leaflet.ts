@@ -38,6 +38,8 @@ export function initMap(element: HTMLElement) {
     },
   });
 
+  let isTooltipVisible = false;
+
   countries.on('mousemove', (event) => {
     const { sourceTarget, originalEvent } = event;
     const weeks = VISITED_COUNTRIES[getCountryCode(sourceTarget.feature)] ?? 0;
@@ -63,10 +65,19 @@ export function initMap(element: HTMLElement) {
     }
     tooltipEl.style.top = `${clientY - top - height / 2}px`;
     tooltipEl.style.visibility = 'visible';
+    isTooltipVisible = true;
   });
 
   countries.on('mouseout', () => {
     tooltipEl.style.visibility = '';
+    isTooltipVisible = false;
+  });
+
+  map.on('drag', () => {
+    if (isTooltipVisible) {
+      tooltipEl.style.visibility = '';
+      isTooltipVisible = false;
+    }
   });
 
   countries.addTo(map);
