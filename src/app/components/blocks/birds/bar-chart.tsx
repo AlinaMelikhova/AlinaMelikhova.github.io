@@ -61,7 +61,7 @@ export const HorizontalBarChart: FC = () => {
                 onMouseEnter={rowHoverHandler}
                 onMouseLeave={rowLeaveHandler}
               >
-                <p className={styles.listItemDescription}>{name}</p>
+                <div className={styles.listItemDescription}>{name}</div>
                 <div
                   className={cn(styles.rowContainer, {
                     [`${name}-styles.itemlist}`]: true,
@@ -86,12 +86,11 @@ export const HorizontalBarChart: FC = () => {
                         styles.barDescription,
                         styles.barDescriptionNegative
                       )}
-                      data-description
                     >
                       {negative}
                     </div>
                   </div>
-                  <div className={styles.positiveContainer} data-container>
+                  <div className={styles.positiveContainer}>
                     <div
                       id={positiveId}
                       style={{ width: positiveValue }}

@@ -27,17 +27,17 @@ export const DoughnutChart: React.FC = () => {
         viewBox='0 0 310.679 310.679'
         className={styles.root}
       >
-        {DOGS.map((item) => (
+        {DOGS.map(({ name, bgColor, path }) => (
           <path
-            key={item.name}
-            id={item.name}
+            key={name}
+            id={name}
             className={cn({
-              [styles.inactiveDoughnut]: dog && dog.name !== item.name,
+              [styles.inactiveDoughnut]: dog && dog.name !== name,
             })}
             onMouseEnter={hoverHandler}
             onMouseLeave={leaveHandler}
-            style={{ fill: item.bgColor }}
-            d={item.path}
+            style={{ fill: bgColor }}
+            d={path}
           />
         ))}
       </svg>

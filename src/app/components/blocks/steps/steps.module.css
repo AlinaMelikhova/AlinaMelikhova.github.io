@@ -70,7 +70,7 @@
 @media (max-width: 1200px) {
     .LineChartDescription::before {
         height: 72%;
-        width: 10px;
+        width: 27px;
     }
 
     .LineChartDescription::after {
