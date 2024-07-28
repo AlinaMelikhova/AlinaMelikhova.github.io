@@ -100,12 +100,6 @@ function getNumberWeeks(weeks: number) {
   if (weeks === 0) return 'Not visited';
   if (weeks === 1) return 'About a week';
 
-  const months = Math.floor(weeks / 4);
-  const rest = weeks % 4;
-
-  if (months >= 100) return `Way too long, man...`;
-  if (months === 1) return `About a month`;
-  if (months > 1)
-    return rest ? `More than ${months} months` : `About ${months} months`;
+  if (weeks >= 100) return `Way too long, man...`;
   return `About ${weeks} weeks`;
 }
