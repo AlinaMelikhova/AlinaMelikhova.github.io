@@ -1,74 +1,65 @@
 'use client';
 
-import { FC } from 'react';
+import React, { FC } from 'react';
 import cn from 'classnames';
 import styles from './bar-chart.module.css';
-import { BIRDS } from './config';
+import { BIRDS, Bird } from './config';
 
 export const HorizontalBarChart: FC = () => {
+  const [bird, setBird] = React.useState<Bird | undefined>(undefined);
+  const [barchart, setBarchart] = React.useState<string | undefined>(undefined);
+
   const rowHoverHandler = (el: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    const currentEl = el.currentTarget;
-    currentEl.classList.add(styles.isActiveBarchart);
-    Array.from(document.querySelectorAll('[data-bird]')).forEach((e) => {
-      if (e.id !== el.currentTarget.id)
-        e.classList.add(styles.inactiveBarchart);
-    });
+    const currentEl = el.currentTarget.id;
+    const currenBird = BIRDS.find((item) => item.name === currentEl);
+    setBird(currenBird);
   };
 
   const rowLeaveHandler = (el: React.MouseEvent<HTMLLIElement, MouseEvent>) => {
-    const currentEl = el.currentTarget;
-    currentEl.classList.remove(styles.isActiveBarchart);
-    Array.from(document.querySelectorAll('[data-bird]')).forEach((e) => {
-      if (e.id !== el.currentTarget.id)
-        e.classList.remove(styles.inactiveBarchart);
-    });
+    setBird(undefined);
   };
 
   const barHoverHandler = (
     el: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
-    const currentEl = el.currentTarget;
-    currentEl.classList.add(styles.isActiveDatabar);
-
-    const container = currentEl.closest('[data-container]');
-    const description = container?.querySelector(
-      '[data-description]'
-    ) as HTMLElement | null;
-
-    if (description) {
-      description.style.visibility = 'visible';
-    }
+    const currentEl = el.currentTarget.id;
+    setBarchart(currentEl);
   };
 
   const barLeaveHandler = (
     el: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
-    const currentEl = el.currentTarget;
-    currentEl.classList.remove(styles.isActiveDatabar);
-
-    const container = currentEl.closest('[data-container]');
-    const description = container?.querySelector(
-      '[data-description]'
-    ) as HTMLElement | null;
-
-    if (description) {
-      description.style.visibility = '';
-    }
+    setBarchart(undefined);
   };
 
   return (
     <div className={styles.root}>
       <ul className={styles.list}>
         {BIRDS.map(
-          ({ name, negativeValue, positiveValue, positive, negative }) => {
+          ({
+            name,
+            negativeValue,
+            positiveValue,
+            positive,
+            negative,
+            positiveId,
+            negativeId,
+          }) => {
             return (
               <li
                 key={name}
                 id={name}
-                className={styles.listItem}
+                className={cn(
+                  styles.listItem,
+                  {
+                    [styles.inactiveBarchart]: bird && bird.name !== name,
+                  },
+                  {
+                    [styles.isActiveBarchart]: bird && bird.name === name,
+                  }
+                )}
                 onMouseEnter={rowHoverHandler}
                 onMouseLeave={rowLeaveHandler}
-                data-bird
               >
                 <p className={styles.listItemDescription}>{name}</p>
                 <div
@@ -81,8 +72,12 @@ export const HorizontalBarChart: FC = () => {
                       {negativeValue}
                     </span>
                     <div
+                      id={negativeId}
                       style={{ width: negativeValue }}
-                      className={cn(styles.negativeBar, styles.dataBar)}
+                      className={cn(styles.negativeBar, styles.dataBar, {
+                        [styles.isActiveDatabar]:
+                          barchart && barchart === negativeId,
+                      })}
                       onMouseEnter={barHoverHandler}
                       onMouseLeave={barLeaveHandler}
                     ></div>
@@ -98,8 +93,12 @@ export const HorizontalBarChart: FC = () => {
                   </div>
                   <div className={styles.positiveContainer} data-container>
                     <div
+                      id={positiveId}
                       style={{ width: positiveValue }}
-                      className={cn(styles.positiveBar, styles.dataBar)}
+                      className={cn(styles.positiveBar, styles.dataBar, {
+                        [styles.isActiveDatabar]:
+                          barchart && barchart === positiveId,
+                      })}
                       onMouseEnter={barHoverHandler}
                       onMouseLeave={barLeaveHandler}
                     ></div>

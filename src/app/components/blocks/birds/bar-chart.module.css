@@ -92,6 +92,7 @@
     width: 100%;
     list-style-type: none;
     position: relative;
+    height: 29px;
 
     @media (max-width: 1200px) {
         height: 26px;
@@ -125,10 +126,17 @@
 
 
 .isActiveDatabar {
-    height: 26px !important;
+    height: 29px !important;
     transition: height .2s ease-in-out;
+
+    @media (max-width: 1200px) {
+        height: 24px;
+    }
 }
 
+.isActiveDatabar+.barDescription {
+    visibility: visible;
+}
 
 .isActiveBarchart p {
     font-size: 16px;
@@ -180,7 +188,7 @@
     position: absolute;
     padding: 10px;
     bottom: 40px;
-    left: 0;
+    left: 2px;
     max-width: 55%;
     height: max-content;
     background-color: rgba(255, 255, 255, 0.9);
@@ -201,7 +209,7 @@
 
 .barDescriptionNegative {
     left: auto;
-    right: 0;
+    right: 2px;
 }
 
 @media (max-width: 1200px) {

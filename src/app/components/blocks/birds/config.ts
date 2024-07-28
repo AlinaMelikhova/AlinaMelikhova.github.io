@@ -1,10 +1,12 @@
-interface Bird {
+export interface Bird {
   name: string;
   value: string;
   positive?: string;
   negative?: string;
   positiveValue: string;
   negativeValue?: string;
+  positiveId?: string;
+  negativeId?: string;
 }
 
 export const BIRDS: Bird[] = [
@@ -15,12 +17,16 @@ export const BIRDS: Bird[] = [
     negative: 'It flies to my balcony every day at 6 am and yells at me',
     positiveValue: '30%',
     negativeValue: '50%',
+    positiveId: 'CorellaNegative',
+    negativeId: 'CorellaPositive',
   },
   {
     name: 'Cockatoo',
     value: '#FF6D68',
     positive: 'Absolutely in love with their randomness!',
     positiveValue: '100%',
+    positiveId: 'CockatooNegative',
+    negativeId: 'CockatooPositive',
   },
   {
     name: 'Loreekit',
@@ -29,6 +35,8 @@ export const BIRDS: Bird[] = [
     positive: 'Perfect flirters!',
     positiveValue: '75%',
     negativeValue: '10%',
+    positiveId: 'LoreekitNegative',
+    negativeId: 'LoreekitPositive',
   },
   {
     name: 'Kookaburra',
@@ -37,6 +45,8 @@ export const BIRDS: Bird[] = [
     negative: 'I`m afraid of it!',
     positiveValue: '40%',
     negativeValue: '20%',
+    positiveId: 'KookaburraNegative',
+    negativeId: 'KookaburraPositive',
   },
   {
     name: 'Magpie',
@@ -45,6 +55,8 @@ export const BIRDS: Bird[] = [
     negative: 'Doesn`t want to eat my food',
     positiveValue: '60%',
     negativeValue: '55%',
+    positiveId: 'MagpieNegative',
+    negativeId: 'MagpiePositive',
   },
   {
     name: 'Noisy miner',
@@ -53,6 +65,8 @@ export const BIRDS: Bird[] = [
     negative: 'Too grey',
     positiveValue: '50%',
     negativeValue: '5%',
+    positiveId: 'NoisyMinerNegative',
+    negativeId: 'NoisyMinerPositive',
   },
   {
     name: 'Ibis',
@@ -61,5 +75,7 @@ export const BIRDS: Bird[] = [
     negative: 'Alright, it is a `bin chicken`',
     positiveValue: '30%',
     negativeValue: '20%',
+    positiveId: 'IbisNegative',
+    negativeId: 'IbisPositive',
   },
 ];
